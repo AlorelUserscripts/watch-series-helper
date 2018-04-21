@@ -10,3 +10,4 @@ block:
   icon: https://raw.githubusercontent.com/AlorelUserscripts/watch-series-helper/master/favicon.ico
   grant: none
   require: https://cdn.polyfill.io/v2/polyfill.min.js?rum=0&features=default,Array.prototype.includes,console.warn,console.error,setImmediate
+  include: /^https?:\/\/[a-z]{1,2}watchseries\.to\/episode\/.+\.html$/i

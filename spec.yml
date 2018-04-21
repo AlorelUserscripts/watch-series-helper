@@ -1,0 +1,12 @@
+user: AlorelUserscripts
+repo: watch-series-helper
+meta:
+  version: 0.1
+  name: WatchSeries helper
+  namespace: alorel.watch-series-helper
+  author: https://github.com/Alorel
+block:
+  description: Helps you on WatchSeries
+  icon: https://raw.githubusercontent.com/AlorelUserscripts/watch-series-helper/master/favicon.ico
+  grant: none
+  require: https://cdn.polyfill.io/v2/polyfill.min.js?rum=0&features=default,Array.prototype.includes,console.warn,console.error,setImmediate

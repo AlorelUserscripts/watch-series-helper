@@ -5,9 +5,11 @@
   "private": true,
   "main": "index.js",
   "scripts": {
-    "webpack": "webpack",
+    "build": "npm run webpack:prod && npm run package",
     "lint": "tslint -p ./tsconfig.json -s node_modules/custom-tslint-formatters/formatters -t grouped",
     "lint:fix": "npm run lint -- --fix",
+    "package": "node build/build.js",
+    "webpack": "webpack",
     "webpack:watch": "npm run webpack -- --watch",
     "webpack:prod": "cross-env NODE_ENV=production npm run webpack"
   },
@@ -15,6 +17,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "@webcomponents/shadydom": "^1.0.14",
     "typescript-lazy-get-decorator": "1.2.0",
     "typescript-proto-decorator": "2.0.0"
   },
@@ -23,7 +26,6 @@
     "@types/node": "^9.6.6",
     "autoprefixer": "^8.3.0",
     "awesome-typescript-loader": "^5.0.0",
-    "concurrently": "^3.5.1",
     "cross-env": "^5.1.4",
     "custom-tslint-formatters": "^2.3.0",
     "node-sass": "^4.8.3",

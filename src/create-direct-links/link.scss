@@ -1,0 +1,16 @@
+.link {
+  text-shadow: 1px 1px 2px #000000;
+  cursor: pointer;
+
+  &.loading {
+    color: #808080;
+  }
+
+  &.loaded {
+    color: #00ff00;
+  }
+
+  &.errored {
+    color: #8b0000;
+  }
+}

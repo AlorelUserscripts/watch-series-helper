@@ -1,0 +1,30 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "outFile": "./index.js",
+    "sourceMap": false,
+    "importHelpers": true,
+    "module": "commonjs",
+    "stripInternal": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": false,
+    "experimentalDecorators": true,
+    "target": "es5",
+    "lib": [
+      "ScriptHost",
+      "DOM.Iterable",
+      "es2017",
+      "dom"
+    ],
+    "types": [
+      "node"
+    ],
+    "typeRoots": [
+      "node_modules/@types"
+    ]
+  },
+  "files": [
+    "index.ts"
+  ]
+}

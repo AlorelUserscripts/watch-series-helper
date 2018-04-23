@@ -1,7 +1,7 @@
 user: AlorelUserscripts
 repo: watch-series-helper
 meta:
-  version: 0.1.2
+  version: 0.1.3
   name: WatchSeries helper
   namespace: alorel.watch-series-helper
   author: https://github.com/Alorel
@@ -11,5 +11,5 @@ block:
   grant: none
   require:
     - https://cdn.polyfill.io/v2/polyfill.min.js?rum=0&flags=always,gated&features=default,HTMLDocument,Array.prototype.includes,console.warn,console.error,Symbol
-    - https://cdn.jsdelivr.net/npm/@webcomponents/shadydom@1.0.14/shadydom.min.js
+    #- https://cdn.jsdelivr.net/npm/@webcomponents/shadydom@1.0.14/shadydom.min.js
   include: http*://*watchseries.to/episode/*.html

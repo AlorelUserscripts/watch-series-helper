@@ -1,0 +1,13 @@
+language: node_js
+node_js: stable
+before_install:
+  - npm install greenkeeper-lockfile
+  - greenkeeper-lockfile-update
+before_cache: rm -rf node_modules/.cache
+after_script: if [[ $GH_TOKEN ]]; then greenkeeper-lockfile-upload; fi;
+script:
+  - npm run lint
+  - npm test
+cache:
+  directories:
+    - node_modules

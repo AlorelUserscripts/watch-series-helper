@@ -11,7 +11,8 @@
     "package": "node build/build.js",
     "webpack": "webpack",
     "webpack:watch": "npm run webpack -- --watch",
-    "webpack:prod": "cross-env NODE_ENV=production npm run webpack"
+    "webpack:prod": "cross-env NODE_ENV=production npm run webpack",
+    "test": "tsc --noEmit"
   },
   "keywords": [],
   "author": "",

@@ -1,7 +1,6 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "outFile": "./index.js",
     "sourceMap": false,
     "importHelpers": true,
     "module": "commonjs",

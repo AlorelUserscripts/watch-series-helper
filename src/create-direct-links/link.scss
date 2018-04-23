@@ -1,16 +1,21 @@
 .link {
-  text-shadow: 1px 1px 2px #000000;
+  display: inline-block;
+  color: #000;
+  padding: 2px;
   cursor: pointer;
+  border-width: 1px;
+  border-style: ridge;
+  text-decoration: none;
 
   &.loading {
-    color: #808080;
+    border-color: #808080;
   }
 
   &.loaded {
-    color: #00ff00;
+    border-color: #00ff00;
   }
 
   &.errored {
-    color: #8b0000;
+    border-color: #8b0000;
   }
 }

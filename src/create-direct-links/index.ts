@@ -1,5 +1,4 @@
-import {DirectLink} from './DirectLink';
-import {DirectLinkIframeLoader} from './IFrameLoader';
+import {DirectLink, DirectLinkState} from './DirectLink';
 
 const enum Conf {
   ROW_SELECTOR = '#myTable>tbody>tr',
@@ -13,39 +12,47 @@ if (/\/episode\/.*\.html$/i.test(location.href)) {
 
   if (rows.length) {
     for (const row of rows) {
-      setImmediate(() => {
-        const watchLinkElement: HTMLAnchorElement = row.querySelector(Conf.WATCH_EPISODE_SELECTOR);
+      setTimeout(
+        () => {
+          const watchLinkElement: HTMLAnchorElement = row.querySelector(Conf.WATCH_EPISODE_SELECTOR);
+          if (!watchLinkElement) {
+            console.error('Cannot find watch link. Row included below:');
+            console.error(row);
 
-        if (!watchLinkElement) {
-          console.error('Cannot find watch link. Row included below:');
-          console.error(row);
+            return;
+          }
 
-          return;
-        }
+          const gatewayLink: string = watchLinkElement.getAttribute('href');
 
-        const gatewayLink: string = watchLinkElement.getAttribute('href');
+          if (!gatewayLink) {
+            console.error('Watch link element does not contain a href');
+            console.error(watchLinkElement);
 
-        if (!gatewayLink) {
-          console.error('Watch link element does not contain a href');
-          console.error(watchLinkElement);
+            return;
+          }
 
-          return;
-        }
+          if (gatewayLink.includes(Conf.GATEWAY_LINK_IGNORE)) {
+            return;
+          }
 
-        if (gatewayLink.includes(Conf.GATEWAY_LINK_IGNORE)) {
-          return;
-        }
+          const td: HTMLTableRowElement = row.querySelector(Conf.TARGET_TD_SELECTOR);
 
-        const td: HTMLTableRowElement = row.querySelector(Conf.TARGET_TD_SELECTOR);
+          td.innerHTML = '';
 
-        td.innerHTML = '';
-
-        const directLink = new DirectLink(td);
-        new DirectLinkIframeLoader(directLink, gatewayLink)
-          .load()
-          //tslint:disable-next-line:no-unbound-method
-          .catch(console.error);
-      });
+          const directLink = new DirectLink();
+          td.appendChild(directLink.element);
+          try {
+            const params = gatewayLink.split('?')[1];
+            //tslint:disable-next-line:no-magic-numbers
+            directLink.href = atob(params.substr(2));
+            directLink.state = DirectLinkState.READY;
+          } catch (e) {
+            console.error(e);
+            directLink.state = DirectLinkState.ERROR;
+          }
+        },
+        0
+      );
     }
   } else {
     console.warn('No rows found');

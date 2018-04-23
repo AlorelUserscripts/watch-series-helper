@@ -9,8 +9,7 @@ module.exports = {
   entry: {
     userscript: join(__dirname, 'index.ts')
   },
-  externals: {
-  },
+  externals: {},
   module: {
     rules: [
       {
@@ -61,9 +60,9 @@ module.exports = {
   target: 'web',
   parallelism: require('os').cpus().length,
   output: {
-    path:          __dirname,
-    filename:      'watch-series-helper.raw.js',
+    path: __dirname,
+    filename: 'watch-series-helper.raw.js',
     libraryTarget: 'umd',
-    library:       'wsh'
+    library: 'wsh'
   }
 };

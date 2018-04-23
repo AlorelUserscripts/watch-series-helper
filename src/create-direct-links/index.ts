@@ -4,7 +4,7 @@ const enum Conf {
   ROW_SELECTOR = '#myTable>tbody>tr',
   WATCH_EPISODE_SELECTOR = '.watchlink',
   GATEWAY_LINK_IGNORE = '//watch.',
-  TARGET_TD_SELECTOR = 'td:nth-child(3)'
+  TARGET_TD_SELECTOR = 'td:nth-child(2)'
 }
 
 if (/\/episode\/.*\.html$/i.test(location.href)) {

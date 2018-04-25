@@ -27,10 +27,7 @@ export class DirectLink {
       return this.attachTo;
     }
 
-    const el: HTMLDivElement = document.createElement('div');
-    el.setAttribute('style', 'display:inline !important');
-
-    return el;
+    return document.createElement('div');
   }
 
   public get href(): string {

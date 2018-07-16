@@ -5,6 +5,7 @@ before_install:
   - greenkeeper-lockfile-update
 before_cache: rm -rf node_modules/.cache
 after_script: if [[ $GH_TOKEN ]]; then greenkeeper-lockfile-upload; fi;
+install: npm install
 script:
   - npm run lint
   - npm test

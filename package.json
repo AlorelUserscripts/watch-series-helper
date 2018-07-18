@@ -18,7 +18,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "@webcomponents/shadydom": "1.1.1",
+    "@webcomponents/shadydom": "1.1.2",
     "typescript-lazy-get-decorator": "1.2.0",
     "typescript-proto-decorator": "2.0.1"
   },

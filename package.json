@@ -20,7 +20,7 @@
   "dependencies": {
     "@webcomponents/shadydom": "1.2.0",
     "typescript-lazy-get-decorator": "1.2.2",
-    "typescript-proto-decorator": "2.0.2"
+    "typescript-proto-decorator": "2.1.0"
   },
   "devDependencies": {
     "@types/async": "^2.0.49",
